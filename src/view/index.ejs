@@ -1,0 +1,15 @@
+<%- include('includes/header') %>
+<div class="complexcenter center">
+    <h1>Ultimos posts:</h1>
+    <%for (let i = 0; i<posts.length; i++) {%>
+        <div>
+            <h1><a href='/posts/<%=posts[i].id%>'><%=posts[i].title%></a></h1>
+            <p><%=posts[i].text%></p>
+            por: <%=posts[i].autor%><br>em:<%=posts[i].createdAt%>
+        </div>
+    <%}%>
+</div>
+<button class="fixedtop button" onclick="location.href='/entrar'">Entrar</button>
+<div class="fixedbottom">Criado por Annie F Lopes (4C)</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<%- include('includes/header') %>
+<div class="complexcenter center">
+    <%if (post) {%>
+        <div>
+            <h1><%=post[0].title%></a><a href="/posts/editar/<%=post[0].id%>" style="font-size: 30%;">editar</a></h1>
+            <p><%=post[0].assunto%></p>
+            <p><%=post[0].text%></p>
+            por: <%=post[0].autor%><br>em:<%=post[0].createdAt%>
+        </div>
+    <%}%>
+</div>
+<div class="fixedbottom">Criado por Annie F Lopes (4C)</div>
+</body>
+</html>

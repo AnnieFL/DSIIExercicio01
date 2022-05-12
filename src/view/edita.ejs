@@ -1,0 +1,18 @@
+<%- include('includes/header') %>
+<div class="complexcenter center">
+    <%if (post) {%>
+        <div>
+            <form action="/posts/<%=post[0].id%>" method="post">
+                <h1><input type="text" name='title' value="<%=post[0].title%>"></h1>
+                <p><input type='text' name='assunto' value='<%=post[0].assunto%>'></p>
+                <p><input type='text' name='text' value='<%=post[0].text%>'></p>
+                <input type='hidden' name='autor' value='<%=post[0].autor%>'>
+                <input type='hidden' name='id' value='<%=post[0].id%>'>
+                <input type="submit" value="Editar">
+            </form>
+        </div>
+    <%}%>
+</div>
+<div class="fixedbottom">Criado por Annie F Lopes (4C)</div>
+</body>
+</html>

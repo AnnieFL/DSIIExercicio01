@@ -1,0 +1,38 @@
+<%- include('includes/header') %>
+<div class="complexcenter center">
+    <%for (let i = 0; i<posts.length; i++) {%>
+        <div>
+            <h1><a href='/posts/<%=posts[i].id%>'><%=posts[i].title%></a></h1>
+            <p><%=posts[i].assunto%></p>
+            <p><%=posts[i].text%></p>
+            por: <%=posts[i].autor%><br>em:<%=posts[i].createdAt%>
+            <hr>
+        </div>
+    <%}%>
+</div>
+<div class="complexcenter center">
+    <form action="/posts" method="post">
+        <input type="text" name="title" placeholder="Titulo"><br>
+        <input type="text" name="assunto" placeholder="Assunto"><br>
+        <textarea name="text" cols="30" rows="10" placeholder="Conteúdo"></textarea><br>
+        <input type="hidden" name="autor" value="<%=user%>">
+        <input type="submit" value="postar">
+    </form>
+</div>
+<form class='fixedtopleft' action="/posts" method="get">
+    <input type="text" name='pesquisa' placeholder="Pesquisar...">
+    <select name="order">
+        <option value="createdAt ASC">Data crescente</option>
+        <option value="createdAt DESC">Data decrescente</option>
+    </select>
+    <input type="submit" value="🔎">
+</form>
+<div>
+    <%for (let i = 0; i<Math.ceil(total/10); i++) {%>
+        <a href="posts?page=<%=i%>"><%=i+1%></a>
+    <%}%>
+</div>
+<button class="fixedtop button2" onclick="location.href='/sair'">Sair</button>
+<div class="fixedbottom">Criado por Annie F Lopes (4C)</div>
+</body>
+</html>
